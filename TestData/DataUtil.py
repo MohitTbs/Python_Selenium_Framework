@@ -1,10 +1,14 @@
+import os
+
 import openpyxl
+
+from Utilities.util import get_root_of_project
 
 
 def dp1():
     list = []
-    path = 'Appium_Python\\TestData\\testdata.xlsx'
-    workbook = openpyxl.load_workbook(path)
+    # path = '.\\TestData\\testdata.xlsx'
+    workbook = openpyxl.load_workbook(os.path.join(get_root_of_project(), 'TestData', 'testdata.xlsx'))
     sheet = workbook.get_sheet_by_name('Sheet1')
 
     rowcount = sheet.max_row
@@ -29,9 +33,8 @@ test_col_ends = 0
 
 def dp2(method_name):
     list = []
-    path = 'D:\\PythonFolder\\pythonProject\\pytestDemoForTesting\\testdata.xlsx'
-    path = '.\\TestData\\testdata.xlsx'
-    workbook = openpyxl.load_workbook(path)
+    # path = '.\\TestData\\testdata.xlsx'
+    workbook = openpyxl.load_workbook(os.path.join(get_root_of_project(), 'TestData', 'testdata.xlsx'))
     sheet = workbook.get_sheet_by_name('Sheet1')
 
     rowcount = sheet.max_row
